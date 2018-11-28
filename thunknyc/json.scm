@@ -39,8 +39,8 @@
 
   (object ((: ,space (-> o ,datum) ,space) o)))
 
-;;> Call the JSON parser on the \var{(chibi parse)} parse stream
-;;> source, at index \var{index}, and return the result, or #f if
-;;> parsing fails.
+;;> Call the JSON parser on the \scheme{(chibi parse)} parse stream
+;;> \var{source}, at index \var{index}, and return the result, or
+;;> \scheme{#f} if parsing fails.
 
-(define (parse-json . args) (apply parse object args))
+(define (parse-json source . o) (apply parse object source o))
