@@ -43,4 +43,6 @@
 ;;> \var{source}, at index \var{index}, and return the result, or
 ;;> \scheme{#f} if parsing fails.
 
-(define (parse-json source . o) (apply parse object source o))
+(define (parse-json source . o)
+  (let ((index (if (pair? o) (car o) 0)))
+    (parse object source index)))
